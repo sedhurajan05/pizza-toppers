@@ -38,11 +38,11 @@
 <section id="home" class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="floating-ingredients">
+  <!-- <div class="floating-ingredients">
     <span class="ingredient ing-1">🍅</span>
     <span class="ingredient ing-2">🌿</span>
     <span class="ingredient ing-3">🧀</span>
-  </div>
+  </div> -->
   <div class="hero-content">
     <h1><span class="font-italian">Wood-Fired.</span><br/><em>Handcrafted.</em><br/><span class="font-italian">Unforgettable.</span></h1>
     <p>Italiano pizzas baked in our 900°F stone oven</p>
@@ -453,14 +453,14 @@
         <div class="form-msg" id="formMsg"></div>
       </div>
       <div class="contact-info">
-        <a href="https://wa.me/919789163364" target="_blank" class="btn-wa-large"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+        <button onclick="openCart()" class="btn-wa-large"><i class="fas fa-shopping-bag"></i> View Cart &amp; Order</button>
         <div class="contact-details">
-          <p><i class="fas fa-phone"></i> +91 9789163364</p>
-          <p><i class="fas fa-envelope"></i> sedhurajan500@gmail.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Naples-style Artisan Pizzeria, Chennai</p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+919789163364">+91 9789163364</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:sedhurajan500@gmail.com">sedhurajan500@gmail.com</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> Pizza Toppers, N Red Hills Rd, Villivakkam, Chennai, Tamil Nadu 600049</p>
         </div>
         <div class="map-wrap">
-          <iframe src="https://maps.google.com/maps?q=Chennai&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8589.974673260966!2d80.20146734184254!3d13.117583586721421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526466efeefdab%3A0xe8e2dd4bc95236f9!2sPIZZA%20TOPPERS!5e0!3m2!1sen!2sin!4v1790115000214!5m2!1sen!2sin" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
     </div>
@@ -473,15 +473,10 @@
       <div class="logo">Pizza<span>Toppers</span></div>
       <p>Wood-Fired. Handcrafted. Unforgettable.</p>
     </div>
-    <div class="footer-links">
-      <h5>Quick Links</h5>
-      <div class="footer-links-row">
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="footer-center">
+      <p>© 2025 Pizza Toppers. All rights reserved.</p>
+      <p>Built by <a href="https://instagram.com/codex_builds" target="_blank">SedhuTech</a></p>
+      <p>DM to Build your Brand's website <a href="https://instagram.com/codex_builds" target="_blank">@codex_builds</a></p>
     </div>
     <div class="footer-social">
       <h5>Follow Us</h5>
@@ -491,7 +486,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom" style="display:none;">
     <p>© 2025 Pizza Toppers. All rights reserved.</p>
     <p>Built by <a href="https://instagram.com/codex_builds" target="_blank">SedhuTech</a></p>
     <p>DM to Build your Brand's website <a href="https://instagram.com/codex_builds" target="_blank">@codex_builds</a></p>
