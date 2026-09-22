@@ -22,8 +22,13 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><button id="themeToggle" class="nav-theme-btn"><i class="fas fa-moon" id="themeIcon"></i></button></li>
     </ul>
-    <a href="https://wa.me/916383100912" target="_blank" class="btn-order-nav">Order Now</a>
+    <a href="https://wa.me/919789163364" target="_blank" class="btn-order-nav">Order Now</a>
+    <button class="cart-icon-btn" id="cartIconBtn" aria-label="Cart">
+      <i class="fas fa-shopping-bag"></i>
+      <span class="cart-badge" id="cartBadge">0</span>
+    </button>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -40,21 +45,14 @@
   </div>
   <div class="hero-content">
     <h1><span class="font-italian">Wood-Fired.</span><br/><em>Handcrafted.</em><br/><span class="font-italian">Unforgettable.</span></h1>
-    <p>Artisan pizzas baked in our 900°F stone oven</p>
+    <p>Italiano pizzas baked in our 900°F stone oven</p>
     <div class="hero-btns">
-      <a href="https://wa.me/916383100912" target="_blank" class="btn-primary">
-        <i class="fab fa-whatsapp"></i> Order on WhatsApp
-      </a>
       <a href="#menu" class="btn-secondary">Explore Menu</a>
     </div>
   </div>
   <div class="steam-bg">
-    <span class="s1"></span>
-    <span class="s2"></span>
-    <span class="s3"></span>
-    <span class="s4"></span>
-    <span class="s5"></span>
-    <span class="s6"></span>
+    <span class="s1"></span><span class="s2"></span><span class="s3"></span>
+    <span class="s4"></span><span class="s5"></span><span class="s6"></span>
   </div>
 </section>
 
@@ -66,6 +64,7 @@
       <button class="tab-btn" data-tab="veg">Veg Special</button>
       <button class="tab-btn" data-tab="nonveg">Non-Veg</button>
       <button class="tab-btn" data-tab="signature">Signature</button>
+      <button class="tab-btn" data-tab="burger">Burgers</button>
     </div>
 
     <div class="tab-content active" id="tab-classic">
@@ -79,7 +78,7 @@
             <div class="flip-back">
               <h3>Margherita</h3>
               <p>Fresh mozzarella, San Marzano tomatoes, basil</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Margherita" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Margherita',299)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -92,7 +91,7 @@
             <div class="flip-back">
               <h3>Pepperoni Classic</h3>
               <p>Premium pepperoni, mozzarella, tomato sauce</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Pepperoni Classic" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Pepperoni Classic',349)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -105,7 +104,7 @@
             <div class="flip-back">
               <h3>BBQ Chicken</h3>
               <p>Grilled chicken, BBQ sauce, red onions, mozzarella</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: BBQ Chicken" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('BBQ Chicken',379)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -118,7 +117,7 @@
             <div class="flip-back">
               <h3>Four Cheese</h3>
               <p>Mozzarella, cheddar, parmesan, gorgonzola</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Four Cheese" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Four Cheese',399)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -136,7 +135,7 @@
             <div class="flip-back">
               <h3>Garden Fresh</h3>
               <p>Bell peppers, mushrooms, olives, cherry tomatoes</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Garden Fresh" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Garden Fresh',319)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -149,7 +148,7 @@
             <div class="flip-back">
               <h3>Paneer Tikka</h3>
               <p>Tandoori paneer, capsicum, onion, mint chutney base</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Paneer Tikka" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Paneer Tikka',349)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -162,7 +161,7 @@
             <div class="flip-back">
               <h3>Mushroom Truffle</h3>
               <p>Wild mushrooms, truffle oil, parmesan, arugula</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Mushroom Truffle" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Mushroom Truffle',369)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -175,7 +174,7 @@
             <div class="flip-back">
               <h3>Spinach Artichoke</h3>
               <p>Creamed spinach, artichoke hearts, garlic, mozzarella</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Spinach Artichoke" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Spinach Artichoke',339)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -193,7 +192,7 @@
             <div class="flip-back">
               <h3>Chicken Supreme</h3>
               <p>Grilled chicken, jalapeños, corn, mozzarella</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Chicken Supreme" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Chicken Supreme',399)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -206,7 +205,7 @@
             <div class="flip-back">
               <h3>Meat Lovers</h3>
               <p>Pepperoni, chicken, bacon, sausage</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Meat Lovers" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Meat Lovers',449)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -219,7 +218,7 @@
             <div class="flip-back">
               <h3>Spicy Chicken</h3>
               <p>Fiery chicken, ghost pepper sauce, onions</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Spicy Chicken" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Spicy Chicken',379)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -232,7 +231,7 @@
             <div class="flip-back">
               <h3>Prawn Delight</h3>
               <p>Garlic prawns, cherry tomatoes, lemon zest, basil</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Prawn Delight" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Prawn Delight',479)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -250,7 +249,7 @@
             <div class="flip-back">
               <h3>Truffle Royale</h3>
               <p>Black truffle, wild mushrooms, 24K gold flakes, burrata</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Truffle Royale" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Truffle Royale',549)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -263,7 +262,7 @@
             <div class="flip-back">
               <h3>The Inferno</h3>
               <p>Triple chilli, nduja sausage, honey drizzle, mozzarella</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: The Inferno" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('The Inferno',499)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -276,7 +275,7 @@
             <div class="flip-back">
               <h3>Wood-Fire Special</h3>
               <p>Chef's daily special, seasonal ingredients, stone-baked</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Wood-Fire Special" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Wood-Fire Special',529)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -289,7 +288,77 @@
             <div class="flip-back">
               <h3>Burrata Bliss</h3>
               <p>Fresh burrata, heirloom tomatoes, basil oil, sea salt</p>
-              <a href="https://wa.me/916383100912?text=Hi, I'd like to order: Burrata Bliss" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Order Now</a>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Burrata Bliss',489)"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="tab-burger">
+      <div class="menu-scroll">
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="Classic Chicken Burger"/>
+              <div class="card-info"><h3>Chicken Burger</h3><span class="price">₹199</span></div>
+            </div>
+            <div class="flip-back">
+              <h3>Chicken Burger</h3>
+              <p>Crispy fried chicken, lettuce, mayo, brioche bun</p>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Chicken Burger',199)"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80" alt="Veg Burger"/>
+              <div class="card-info"><h3>Veg Burger</h3><span class="price">₹169</span></div>
+            </div>
+            <div class="flip-back">
+              <h3>Veg Burger</h3>
+              <p>Crispy veggie patty, tomato, onion, cheese, mustard</p>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Veg Burger',169)"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80" alt="Paneer Burger"/>
+              <div class="card-info"><h3>Paneer Burger</h3><span class="price">₹189</span></div>
+            </div>
+            <div class="flip-back">
+              <h3>Paneer Burger</h3>
+              <p>Tandoori paneer patty, mint chutney, onion rings, brioche</p>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Paneer Burger',189)"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80" alt="Tower Burger"/>
+              <div class="card-info"><h3>Tower Burger</h3><span class="price">₹279</span></div>
+            </div>
+            <div class="flip-back">
+              <h3>Tower Burger</h3>
+              <p>Double patty, bacon, egg, cheese, caramelised onions</p>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Tower Burger',279)"><i class="fas fa-plus"></i> Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=600&q=80" alt="Spicy Smash Burger"/>
+              <div class="card-info"><h3>Spicy Smash Burger</h3><span class="price">₹229</span></div>
+            </div>
+            <div class="flip-back">
+              <h3>Spicy Smash Burger</h3>
+              <p>Smashed beef patty, ghost pepper sauce, jalapeños, cheddar</p>
+              <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('Spicy Smash Burger',229)"><i class="fas fa-plus"></i> Add to Cart</button>
             </div>
           </div>
         </div>
@@ -310,18 +379,9 @@
       </div>
     </div>
     <div class="value-cards">
-      <div class="value-card">
-        <span class="value-icon">🔥</span>
-        <h4>900°F Stone Oven</h4>
-      </div>
-      <div class="value-card">
-        <span class="value-icon">🌿</span>
-        <h4>Fresh Daily Ingredients</h4>
-      </div>
-      <div class="value-card">
-        <span class="value-icon">🍕</span>
-        <h4>Naples Tradition</h4>
-      </div>
+      <div class="value-card"><span class="value-icon">🔥</span><h4>900°F Stone Oven</h4></div>
+      <div class="value-card"><span class="value-icon">🌿</span><h4>Fresh Daily Ingredients</h4></div>
+      <div class="value-card"><span class="value-icon">🍕</span><h4>Naples Tradition</h4></div>
     </div>
   </div>
 </section>
@@ -357,31 +417,11 @@
       <button class="car-btn car-prev" id="carPrev"><i class="fas fa-chevron-left"></i></button>
       <div class="carousel-viewport">
         <div class="carousel-track" id="carTrack">
-          <div class="testi-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Best pizza in the city. The wood-fired crust is absolutely unreal."</p>
-            <h4>Rahul M.</h4>
-          </div>
-          <div class="testi-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Truffle Royale changed my life. Worth every rupee."</p>
-            <h4>Priya S.</h4>
-          </div>
-          <div class="testi-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Ordered on WhatsApp, delivered hot. Meat Lovers is insane."</p>
-            <h4>Arjun K.</h4>
-          </div>
-          <div class="testi-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"Paneer Tikka pizza is a masterpiece. Perfectly spiced."</p>
-            <h4>Sneha R.</h4>
-          </div>
-          <div class="testi-card">
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>"The Inferno lives up to its name. Addictively spicy and delicious."</p>
-            <h4>Vikram T.</h4>
-          </div>
+          <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Best pizza in the city. The wood-fired crust is absolutely unreal."</p><h4>Rahul M.</h4></div>
+          <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Truffle Royale changed my life. Worth every rupee."</p><h4>Priya S.</h4></div>
+          <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Ordered on WhatsApp, delivered hot. Meat Lovers is insane."</p><h4>Arjun K.</h4></div>
+          <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Paneer Tikka pizza is a masterpiece. Perfectly spiced."</p><h4>Sneha R.</h4></div>
+          <div class="testi-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"The Inferno lives up to its name. Addictively spicy and delicious."</p><h4>Vikram T.</h4></div>
         </div>
       </div>
       <button class="car-btn car-next" id="carNext"><i class="fas fa-chevron-right"></i></button>
@@ -413,9 +453,9 @@
         <div class="form-msg" id="formMsg"></div>
       </div>
       <div class="contact-info">
-        <a href="https://wa.me/916383100912" target="_blank" class="btn-wa-large"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+        <a href="https://wa.me/919789163364" target="_blank" class="btn-wa-large"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
         <div class="contact-details">
-          <p><i class="fas fa-phone"></i> +91 6383100912</p>
+          <p><i class="fas fa-phone"></i> +91 9789163364</p>
           <p><i class="fas fa-envelope"></i> sedhurajan500@gmail.com</p>
           <p><i class="fas fa-map-marker-alt"></i> Naples-style Artisan Pizzeria, Chennai</p>
         </div>
@@ -447,7 +487,7 @@
       <h5>Follow Us</h5>
       <div class="social-icons">
         <a href="https://instagram.com/codex_builds" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/916383100912" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://wa.me/919789163364" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </div>
@@ -458,13 +498,32 @@
   </div>
 </footer>
 
-<div class="settings-panel" id="settingsPanel">
-  <button class="gear-btn" id="gearBtn"><i class="fas fa-cog"></i></button>
-  <div class="settings-drawer" id="settingsDrawer">
-    <p>Theme</p>
-    <button id="themeToggle"><i class="fas fa-moon"></i> <span id="themeLabel">Light Mode</span></button>
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Order</h3>
+    <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-body">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fas fa-shopping-bag"></i>
+      <p>Your cart is empty</p>
+      <span>Add pizzas from the menu</span>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-total">
+      <span>Total</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <a id="cartWhatsapp" href="#" target="_blank" class="btn-wa-large"><i class="fab fa-whatsapp"></i> Order via WhatsApp</a>
+    <button class="cart-clear" id="cartClear">Clear Cart</button>
   </div>
 </div>
+
+<button id="themeToggle" class="theme-fab"><i class="fas fa-moon" id="themeIcon"></i></button>
 
 <script src="app.js"></script>
 </body>
