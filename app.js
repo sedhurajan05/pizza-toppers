@@ -21,7 +21,8 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 navbar.classList.add('nav-top');
 
-hamburger.addEventListener('click', () => {
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
   hamburger.classList.toggle('open');
   navLinks.classList.toggle('open');
 });
