@@ -5,8 +5,8 @@ const navLinks = document.getElementById('navLinks');
 
 // PAUSE HERO ANIMATIONS ON SCROLL
 const heroBg = document.querySelector('.hero-bg');
-const steamBg = document.querySelector('.steam-bg');
-const steamSpans = document.querySelectorAll('.steam-bg span');
+//const steamBg = document.querySelector('.steam-bg');
+//const steamSpans = document.querySelectorAll('.steam-bg span');
 const heroSection = document.getElementById('home');
 
 window.addEventListener('scroll', () => {
@@ -16,8 +16,8 @@ window.addEventListener('scroll', () => {
   const pastHero = window.scrollY > heroSection.offsetHeight * 0.8;
   const state = pastHero ? 'paused' : 'running';
   heroBg.style.animationPlayState = state;
-  steamSpans.forEach(s => s.style.animationPlayState = state);
-  steamBg.style.visibility = pastHero ? 'hidden' : 'visible';
+//  steamSpans.forEach(s => s.style.animationPlayState = state);
+//  steamBg.style.visibility = pastHero ? 'hidden' : 'visible';
 }, { passive: true });
 navbar.classList.add('nav-top');
 
