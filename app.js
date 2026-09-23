@@ -50,8 +50,12 @@ function addToCart(name, price) {
     cart.push({ name, price, qty: 1 });
   }
   updateCart();
-  openCart();
   animateBadge();
+  if (cart.length === 1 && !existing) {
+    openCart();
+  } else {
+    showToast(name + ' added to cart');
+  }
 }
 
 function updateCart() {
@@ -125,6 +129,19 @@ function animateBadge() {
   const badge = document.getElementById('cartBadge');
   badge.classList.add('bump');
   setTimeout(() => badge.classList.remove('bump'), 200);
+}
+
+function showToast(msg) {
+  let toast = document.getElementById('cartToast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'cartToast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = '✓ ' + msg;
+  toast.classList.add('show');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
 document.getElementById('cartIconBtn').addEventListener('click', openCart);

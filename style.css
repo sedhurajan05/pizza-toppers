@@ -295,3 +295,11 @@ body.light #navbar.nav-top .nav-theme-btn{color:rgba(255,255,255,0.8);}
 .contact-btn{display:flex;align-items:center;gap:0.75rem;background:var(--card-bg);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;border-radius:6px;font-size:0.95rem;transition:border-color var(--transition),color var(--transition);}
 .contact-btn:hover{border-color:var(--gold);color:var(--gold);}
 .contact-btn i{color:var(--gold);width:16px;flex-shrink:0;}
+
+.flip-card{touch-action:manipulation;}
+.flip-inner{transition:transform 0.5s ease;will-change:transform;}
+.flip-front,.flip-back{will-change:transform;}
+.menu-scroll{-webkit-overflow-scrolling:touch;}
+
+#cartToast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--card-bg);border:1px solid var(--gold);color:var(--text);padding:0.7rem 1.4rem;border-radius:30px;font-size:0.85rem;font-family:'Raleway',sans-serif;opacity:0;transition:opacity 0.3s,transform 0.3s;z-index:3000;pointer-events:none;white-space:nowrap;}
+#cartToast.show{opacity:1;transform:translateX(-50%) translateY(0);}
