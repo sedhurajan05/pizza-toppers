@@ -3,10 +3,21 @@ const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 
+// PAUSE HERO ANIMATIONS ON SCROLL
+const heroBg = document.querySelector('.hero-bg');
+const steamSpans = document.querySelectorAll('.steam-bg span');
+let scrollTimer;
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY > 60;
   navbar.classList.toggle('scrolled', scrolled);
   navbar.classList.toggle('nav-top', !scrolled);
+  if (window.scrollY > window.innerHeight * 0.5) {
+    heroBg.style.animationPlayState = 'paused';
+    steamSpans.forEach(s => s.style.animationPlayState = 'paused');
+  } else {
+    heroBg.style.animationPlayState = 'running';
+    steamSpans.forEach(s => s.style.animationPlayState = 'running');
+  }
 });
 navbar.classList.add('nav-top');
 
