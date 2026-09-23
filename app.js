@@ -5,20 +5,20 @@ const navLinks = document.getElementById('navLinks');
 
 // PAUSE HERO ANIMATIONS ON SCROLL
 const heroBg = document.querySelector('.hero-bg');
+const steamBg = document.querySelector('.steam-bg');
 const steamSpans = document.querySelectorAll('.steam-bg span');
-let scrollTimer;
+const heroSection = document.getElementById('home');
+
 window.addEventListener('scroll', () => {
   const scrolled = window.scrollY > 60;
   navbar.classList.toggle('scrolled', scrolled);
   navbar.classList.toggle('nav-top', !scrolled);
-  if (window.scrollY > window.innerHeight * 0.5) {
-    heroBg.style.animationPlayState = 'paused';
-    steamSpans.forEach(s => s.style.animationPlayState = 'paused');
-  } else {
-    heroBg.style.animationPlayState = 'running';
-    steamSpans.forEach(s => s.style.animationPlayState = 'running');
-  }
-});
+  const pastHero = window.scrollY > heroSection.offsetHeight * 0.8;
+  const state = pastHero ? 'paused' : 'running';
+  heroBg.style.animationPlayState = state;
+  steamSpans.forEach(s => s.style.animationPlayState = state);
+  steamBg.style.visibility = pastHero ? 'hidden' : 'visible';
+}, { passive: true });
 navbar.classList.add('nav-top');
 
 hamburger.addEventListener('click', () => {
@@ -40,15 +40,86 @@ navLinks.querySelectorAll('a').forEach(a => {
   });
 });
 
+// MENU DATA
+const menuData = {
+  classic: [
+    { name: 'Margherita', price: 299, desc: 'Fresh mozzarella, San Marzano tomatoes, basil', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80' },
+    { name: 'Pepperoni Classic', price: 349, desc: 'Premium pepperoni, mozzarella, tomato sauce', img: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80' },
+    { name: 'BBQ Chicken', price: 379, desc: 'Grilled chicken, BBQ sauce, red onions, mozzarella', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80' },
+    { name: 'Four Cheese', price: 399, desc: 'Mozzarella, cheddar, parmesan, gorgonzola', img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600&q=80' }
+  ],
+  veg: [
+    { name: 'Garden Fresh', price: 319, desc: 'Bell peppers, mushrooms, olives, cherry tomatoes', img: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=600&q=80' },
+    { name: 'Paneer Tikka', price: 349, desc: 'Tandoori paneer, capsicum, onion, mint chutney base', img: 'https://images.unsplash.com/photo-1548369937-47519962c11a?w=600&q=80' },
+    { name: 'Mushroom Truffle', price: 369, desc: 'Wild mushrooms, truffle oil, parmesan, arugula', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80' },
+    { name: 'Spinach Artichoke', price: 339, desc: 'Creamed spinach, artichoke hearts, garlic, mozzarella', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80' }
+  ],
+  nonveg: [
+    { name: 'Chicken Supreme', price: 399, desc: 'Grilled chicken, jalapeños, corn, mozzarella', img: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80' },
+    { name: 'Meat Lovers', price: 449, desc: 'Pepperoni, chicken, bacon, sausage', img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600&q=80' },
+    { name: 'Spicy Chicken', price: 379, desc: 'Fiery chicken, ghost pepper sauce, onions', img: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80' },
+    { name: 'Prawn Delight', price: 479, desc: 'Garlic prawns, cherry tomatoes, lemon zest, basil', img: 'https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&q=80' }
+  ],
+  signature: [
+    { name: 'Truffle Royale', price: 549, desc: 'Black truffle, wild mushrooms, 24K gold flakes, burrata', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80' },
+    { name: 'The Inferno', price: 499, desc: 'Triple chilli, nduja sausage, honey drizzle, mozzarella', img: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=80' },
+    { name: 'Wood-Fire Special', price: 529, desc: "Chef's daily special, seasonal ingredients, stone-baked", img: 'https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=600&q=80' },
+    { name: 'Burrata Bliss', price: 489, desc: 'Fresh burrata, heirloom tomatoes, basil oil, sea salt', img: 'https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=600&q=80' }
+  ],
+  burger: [
+    { name: 'Chicken Burger', price: 199, desc: 'Crispy fried chicken, lettuce, mayo, brioche bun', img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80' },
+    { name: 'Veg Burger', price: 169, desc: 'Crispy veggie patty, tomato, onion, cheese, mustard', img: 'https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&q=80' },
+    { name: 'Paneer Burger', price: 189, desc: 'Tandoori paneer patty, mint chutney, onion rings, brioche', img: 'https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80' },
+    { name: 'Tower Burger', price: 279, desc: 'Double patty, bacon, egg, cheese, caramelised onions', img: 'https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80' },
+    { name: 'Spicy Smash Burger', price: 229, desc: 'Smashed beef patty, ghost pepper sauce, jalapeños, cheddar', img: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=600&q=80' }
+  ]
+};
+
+// RENDER MENU CARDS
+function renderMenu(tab) {
+  const items = menuData[tab];
+  const isScroll = tab === 'burger';
+  const gridClass = isScroll ? 'menu-scroll' : 'menu-grid';
+  const html = `<div class="${gridClass}">` +
+    items.map(item => `
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <img src="${item.img}" alt="${item.name}" loading="lazy"/>
+            <div class="card-info"><h3>${item.name}</h3><span class="price">₹${item.price}</span></div>
+          </div>
+          <div class="flip-back">
+            <h3>${item.name}</h3>
+            <p>${item.desc}</p>
+            <button class="btn-add-cart" onclick="event.stopPropagation();addToCart('${item.name}',${item.price})"><i class="fas fa-plus"></i> Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    `).join('') +
+  '</div>';
+  const container = document.getElementById('tab-' + tab);
+  container.innerHTML = html;
+}
+
 // MENU TABS
+const renderedTabs = new Set();
+
+function activateTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+  if (!renderedTabs.has(tab)) {
+    renderMenu(tab);
+    renderedTabs.add(tab);
+  }
+}
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-  });
+  btn.addEventListener('click', () => activateTab(btn.dataset.tab));
 });
+
+activateTab('classic');
 
 // CART
 let cart = [];
