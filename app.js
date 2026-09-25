@@ -332,9 +332,16 @@ contactForm.addEventListener('submit', async (e) => {
 // THEME TOGGLE
 const themeToggle = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
+const themeFab = document.getElementById('themeFab');
+const themeFabIcon = document.getElementById('themeFabIcon');
 
-themeToggle.addEventListener('click', () => {
+function toggleTheme() {
   const isLight = document.body.classList.toggle('light');
   document.body.classList.toggle('dark', !isLight);
-  themeIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-});
+  const icon = isLight ? 'fas fa-sun' : 'fas fa-moon';
+  if(themeIcon) themeIcon.className = icon;
+  if(themeFabIcon) themeFabIcon.className = icon;
+}
+
+if(themeToggle) themeToggle.addEventListener('click', toggleTheme);
+if(themeFab) themeFab.addEventListener('click', toggleTheme);

@@ -48,7 +48,7 @@ body.light .nav-links{background:rgba(250,248,244,0.97);}
 .btn-order-nav{display:none;}
 
 /* HERO */
-.hero{position:relative;height:100svh;min-height:580px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero{position:relative;height:100svh;min-height:580px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#0d0d0d;}
 .hero-bg{position:absolute;inset:0;background:url('https://raw.githubusercontent.com/sedhurajan05/files/main/pizza-toppers-images/background.jpg') center/cover no-repeat;animation:parallaxBg 8s cubic-bezier(0.45,0,0.55,1) infinite;}
 @keyframes parallaxBg{
   0%{transform:skewX(-1.2deg);}
@@ -213,9 +213,11 @@ footer .container{padding-left:0;}
   .container{max-width:1200px;margin:0 auto;padding:0 2rem;}
   .section{padding:5.5rem 0;}
   .section-title{font-size:3.2rem;margin-bottom:3rem;}
-  .hamburger{display:none;}
-  .nav-links{display:flex;position:static;top:auto;height:auto;background:transparent;flex-direction:row;gap:2rem;margin-left:auto;width:auto;padding:0;box-shadow:none;}
+  .nav-links{display:flex;position:static;top:auto;height:auto;background:transparent;flex-direction:row;gap:2rem;margin-left:auto;width:auto;padding:0;box-shadow:none;align-items:center;}
   .nav-spacer{display:none;}
+  .cart-icon-btn{margin-left:0;}
+  .hamburger{display:none;}
+  .nav-theme-btn{margin-left:1rem;}
   body.light .nav-links{background:transparent;}
   .nav-links a{font-size:0.9rem;font-family:'Raleway',sans-serif;letter-spacing:0.5px;}
   .logo{font-size:1.5rem;}
@@ -306,3 +308,7 @@ body.light #navbar.nav-top .hamburger span{background:#fff;}
 #cartToast{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--card-bg);border:1px solid var(--gold);color:var(--text);padding:0.7rem 1.4rem;border-radius:30px;font-size:0.85rem;font-family:'Raleway',sans-serif;opacity:0;transition:opacity 0.3s,transform 0.3s;z-index:3000;pointer-events:none;white-space:nowrap;}
 #cartToast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 
+
+.theme-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:var(--card-bg);border:1px solid var(--border);color:var(--gold);width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,0.4);transition:transform var(--transition);}
+.theme-fab:hover{transform:rotate(30deg);}
+@media(min-width:900px){.theme-fab{display:none;}}
